@@ -1,32 +1,21 @@
-// onscroll = function() {
-//     stickyScroll()
-// };
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-// let navigationBar = document.getElementById("navigation");
-// let sticky = navigationBar.offsetTop;
-
-// function stickyScroll() {
-//     if (pageYOffset >= sticky) {
-//         navigationBar.classList.add("sticky")
-//     } else {
-//         navigationBar.classList.remove("sticky");
-//     }
-// }
-
-document.write(`
-    <ul id="navigation">
-    
-    <li><a href="index.html">Home</a></li>
-    <li><a href="latest-news.html">Latest News</a></li>
-    <li><a href="matches.html">Matches</a></li>
-    <li><a href="players.html">Players</a></li>
-    <li><a href="clubs.html">Clubs</a></li>
-    <li><a href="tables.html">Tables</a></li>
-    <div id="member_buttons">
-        <li><input type="text" id="search_bar" placeholder="Search..."></li>
-        <li><a href="login.html" id="login_button">Login</a></li>
-        <li><a href="register.html" id="register_button">Register</a></li>
-    </div>
-    
-    </ul>`)
+function Navigation() {
+  return (
+    <nav>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/latest-news">Latest News</Link></li>
+        <li><Link to="/matches">Matches</Link></li>
+        <li><Link to="/players">Players</Link></li>
+        <li><Link to="/clubs">Clubs</Link></li>
+        <li><Link to="/tables">Tables</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/register">Register</Link></li>
+      </ul>
+    </nav>
+  );
+}
+export default Navigation;
 

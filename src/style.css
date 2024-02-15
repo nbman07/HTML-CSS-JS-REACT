@@ -74,13 +74,18 @@ body {
 #news {
     display: flex;
     overflow: auto;
+    margin:10px;
+}
+
+.news-articles {
+    display: flex;
+    margin:10px;
     background-color: black;
-    margin:20px;
 }
 
 #more-news-button {
     display: inline-block;
-    background-color: red;
+    background-color: darkgray;
     color: white;
     padding: 0.6em 1em;
     text-decoration: none;
@@ -92,6 +97,7 @@ body {
 #matches {
     display: flex;
     overflow: auto;
+    margin:10px;
 }
 .matches-layout {
     padding:20px;
@@ -101,6 +107,10 @@ body {
 }
 .matches-layout > div > p{
     color:white;
+}
+
+.date-of-match, .time-of-match {
+    color: white;
 }
 
 /*** CLUBS PAGE ***/
