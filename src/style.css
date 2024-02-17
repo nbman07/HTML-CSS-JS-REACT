@@ -20,7 +20,7 @@ body {
 }
 
 /* MEMBER BUTTONS */
-#member_buttons {
+.member_buttons {
     float: right;
     text-decoration: none;
 }
