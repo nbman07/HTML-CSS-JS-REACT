@@ -17,14 +17,21 @@ async function fetchTeamInfo(teamID) {
         });
 }
 
-function displayTeams() {
-    fetch("https://v3.football.api-sports.io/teams?league=39&season=2023", {
+export default function DisplayTeams(league,season) {
+    fetch(`https://v3.football.api-sports.io/teams?league=${league}&season=${season}`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "v3.football.api-sports.io",
             "x-rapidapi-key": "b61ef01f3458f0f1db19a3d12413f664"
         }
     })
+    // fetch("https://v3.football.api-sports.io/teams?league=39&season=2023", {
+    //     "method": "GET",
+    //     "headers": {
+    //         "x-rapidapi-host": "v3.football.api-sports.io",
+    //         "x-rapidapi-key": "b61ef01f3458f0f1db19a3d12413f664"
+    //     }
+    // })
         .then(result => result.json())
         .then((json) => {
             console.log(json)

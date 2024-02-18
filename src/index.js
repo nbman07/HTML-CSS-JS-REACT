@@ -19,13 +19,12 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 // import components
 import Navigation from "./navigation";
-import Header from "./components/header"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <center>
-      <Header section="home" />
+      <h1 id="title">All Football</h1>
     </center>
     <Navigation />
     <Routes>

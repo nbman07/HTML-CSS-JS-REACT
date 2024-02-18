@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Link } from 'react-router-dom';
 import '../footballAPI.js'
@@ -43,17 +43,17 @@ function HomeNavigation() {
   return (
     <div>
       <Header />
-        <Navigation />
-        <Routes>
-          {/* <Route exact path="/" element={<Home />} /> */}
-          <Route exact path="/latest-news" element={<LatestNews />} />
-          <Route exact path="/matches" element={<Matches />} />
-          <Route exact path="/players" element={<Players />} />
-          <Route exact path="/clubs" element={<Clubs />} />
-          <Route exact path="/tables" element={<Tables />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Register />} />
-        </Routes>
+      <Navigation />
+      <Routes>
+        {/* <Route exact path="/" element={<Home />} /> */}
+        <Route exact path="/latest-news" element={<LatestNews />} />
+        <Route exact path="/matches" element={<Matches />} />
+        <Route exact path="/players" element={<Players />} />
+        <Route exact path="/clubs" element={<Clubs />} />
+        <Route exact path="/tables" element={<Tables />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/register" element={<Register />} />
+      </Routes>
       {/* </Router> */}
     </div>
   );
@@ -62,12 +62,6 @@ function HomeLatestNews() {
   return (
     <>
       <center>
-        <br />
-
-        <a href="latest-news.html" className="sub-heading-labels">Latest News</a>
-
-        <br /><br />
-
         <div id="news">
           <div className="news-articles">
             <a href="https://www.google.com/search?q=rasmus">
@@ -107,7 +101,7 @@ function HomeLatestNews() {
 function HomeMatches() {
   return (
     <>
-      <a href="/matches" className="sub-heading-labels">Matches</a>
+    <Link to="/matches" className="sub-heading-labels">Matches</Link>
       <div id="matches">
         <div className="matches-layout">
           <div>
@@ -187,7 +181,7 @@ function HomePlayers() {
   return (
     <>
       <div id="players">
-        <a href="latest-news.html" className="sub-heading-labels">Players</a>
+        <Link to="/players" className="sub-heading-labels">Players</Link>
       </div>
     </>
   )
@@ -196,20 +190,26 @@ function HomeClubs() {
   return (
     <>
       <div id="clubs">
-        <a href="latest-news.html" className="sub-heading-labels">Clubs</a>
+        <Link to="/clubs" className="sub-heading-labels">Clubs</Link>
       </div>
     </>
   )
 }
 
 export default function Home() {
+  useEffect(() => {
+    document.getElementById("title").innerHTML = "Home"
+  }, []);
   return (
     <section>
       {/* <Header /> */}
       {/* <HomeNavigation /> */}
       <center>
-        {/* <HomeLatestNews /> */}
-        <LatestNews/>
+        <br />
+        <Link to="/latest-news" className="sub-heading-labels">Latest News</Link>
+        <br /><br />
+        <HomeLatestNews />
+        {/* <LatestNews /> */}
         <HomeMatches />
         <HomePlayers />
         <HomeClubs />

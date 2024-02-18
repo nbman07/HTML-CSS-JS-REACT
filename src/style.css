@@ -1,7 +1,7 @@
 /*** HOME PAGE ***/
 body {
     width: auto;
-    margin:0 auto;
+    margin: auto;
 }
 /* TITLE */
 
@@ -112,6 +112,41 @@ body {
 .date-of-match, .time-of-match {
     color: white;
 }
+
+/*** LATEST NEWS PAGE ***/
+#latest-news-news a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+#latest-news-news {
+    display: inline-block;
+    overflow: auto;
+    margin:10px;
+}
+
+.latest-news-news-articles {
+    display: inline-block;
+    margin:10px;
+    background-color: black;
+}
+/*** MATCHES PAGE ***/
+#matches-matches {
+    display: inline-block;
+    overflow: auto;
+    margin:auto;
+}
+.matches-matches-layout {
+    display: inline-flex;
+    padding:20px;
+    margin:20px;
+    background-color: black;
+}
+.matches-matches-layout > div > p, .date-of-match, .time-of-match {
+    color:white;
+}
+
 
 /*** CLUBS PAGE ***/
 #team {
