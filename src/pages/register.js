@@ -6,7 +6,7 @@ const Register = () => {
     },[]);
     return (
         <div>
-            <h1>Sign Up Successful</h1>
+            <h1>Display Register</h1>
         </div>
     );
 };

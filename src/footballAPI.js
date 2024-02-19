@@ -39,6 +39,7 @@ export default function DisplayTeams(league,season) {
             document.getElementById("team").innerHTML = "";
             // const newTeamDiv = document.createElement("div");
             // newTeamDiv.setAttribute("id","team");
+            <br/>
 
             for (let i = 0; i < json.response.length; i++) {
                 // Create element for each team (logo + name)

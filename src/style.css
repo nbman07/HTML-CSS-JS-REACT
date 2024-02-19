@@ -149,6 +149,11 @@ body {
 
 
 /*** CLUBS PAGE ***/
+#league-season-selector, #league_options, #season_options {
+    margin: 10px;
+    padding: 5px;
+    display: block;
+}
 #team {
     display: flex;
     margin:auto;
@@ -158,4 +163,7 @@ body {
 #team > div {
     height: 100%;
     width: 100%;
+}
+#submit-button {
+    margin: 10px;
 }

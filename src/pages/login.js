@@ -6,7 +6,7 @@ const Login = () => {
     },[]);
     return (
         <div>
-            <h1>Sign Up Successful</h1>
+            <h1>Display Login</h1>
         </div>
     );
 };

@@ -20,7 +20,8 @@ const Clubs = () => {
         <div>
             <center>
                 <form id="league-season-selector">
-                    <label for="league">League</label>
+                    {/* <label >League</label> */}
+                    <p>League</p>
                     <select name="league" id="league_options">
                         <option value="39">Premier League</option>
                         <option value="61">Ligue 1</option>
@@ -28,19 +29,18 @@ const Clubs = () => {
                         <option value="78">Bundesliga</option>
                         <option value="140">La Liga</option>
                     </select>
-
-                    <label for="season">Season</label>
+                    {/* <label>Season</label> */}
+                    <p>Season</p>
                     <select name="season" id="season_options">
                         <option value="2023">2023-24</option>
                         <option value="2022">2022-23</option>
                         <option value="2021">2021-22</option>
                     </select>
                 </form>
-                <button onClick={(e) => {ClearClubs(document.getElementById("league_options").value, document.getElementById("season_options").value)}}>Click here</button>
+                <button id="submit-button" onClick={(e) => {ClearClubs(document.getElementById("league_options").value, document.getElementById("season_options").value)}}>Display teams</button>
                 {/* <button onClick={DisplayTeams(document.getElementById("league_options").value, document.getElementById("season_options").value)}>Click here</button> */}
                 {/* <button onClick={DisplayTeams}>Click here</button> */}
                 <div id="team">
-                    <br/>
                 </div>
             </center>
         </div>
