@@ -1,13 +1,13 @@
 import { render } from "@testing-library/react";
 import React, { useEffect } from "react";
-import DisplayTeams from "../footballAPI";
+import displayTeams from "../footballAPI";
 
 function ClearClubs(league,season) {
     try {
         document.getElementById("teams").innerHTML = "";
     }catch{
     } 
-    DisplayTeams(league,season);
+    displayTeams(league,season);
 }
 
 const Clubs = () => {

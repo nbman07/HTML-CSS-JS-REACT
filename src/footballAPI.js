@@ -17,7 +17,7 @@ async function fetchTeamInfo(teamID) {
         });
 }
 
-export default function DisplayTeams(league,season) {
+export default function displayTeams(league, season) {
     fetch(`https://v3.football.api-sports.io/teams?league=${league}&season=${season}`, {
         "method": "GET",
         "headers": {
@@ -25,13 +25,13 @@ export default function DisplayTeams(league,season) {
             "x-rapidapi-key": "b61ef01f3458f0f1db19a3d12413f664"
         }
     })
-    // fetch("https://v3.football.api-sports.io/teams?league=39&season=2023", {
-    //     "method": "GET",
-    //     "headers": {
-    //         "x-rapidapi-host": "v3.football.api-sports.io",
-    //         "x-rapidapi-key": "b61ef01f3458f0f1db19a3d12413f664"
-    //     }
-    // })
+        // fetch("https://v3.football.api-sports.io/teams?league=39&season=2023", {
+        //     "method": "GET",
+        //     "headers": {
+        //         "x-rapidapi-host": "v3.football.api-sports.io",
+        //         "x-rapidapi-key": "b61ef01f3458f0f1db19a3d12413f664"
+        //     }
+        // })
         .then(result => result.json())
         .then((json) => {
             console.log(json)
@@ -39,7 +39,7 @@ export default function DisplayTeams(league,season) {
             document.getElementById("team").innerHTML = "";
             // const newTeamDiv = document.createElement("div");
             // newTeamDiv.setAttribute("id","team");
-            <br/>
+            <br />
 
             for (let i = 0; i < json.response.length; i++) {
                 // Create element for each team (logo + name)
@@ -68,37 +68,79 @@ export default function DisplayTeams(league,season) {
             console.log(err);
         });
 }
-// function displayTeams() {
-//     fetch("https://v3.football.api-sports.io/teams?league=39&season=2023", {
-//         "method": "GET",
-//         "headers": {
-//             "x-rapidapi-host": "v3.football.api-sports.io",
-//             "x-rapidapi-key": "b61ef01f3458f0f1db19a3d12413f664"
-//         }
-//     })
-//         .then(result => result.json())
-//         .then((json) => {
-//             console.log(json)
-//             for (let i = 0; i < json.response.length; i++) {
-//                 // Create name elements
-//                 const newElement = document.createElement("p");
-//                 const teamName = document.createTextNode(json.response[i].team.name);
-//                 newElement.appendChild(teamName);
-//                 document.getElementById("teams").appendChild(newElement);
-//                 // Create image elements for logos
-//                 console.log(json.response[i].team.name);
-//             }
-//         })
-//         .catch(err => {
-//             console.log(err);
-//         });
-// }
 
 function newFunction() {
     const newElement = document.createElement("p");
-    const teamName = document.createTextNode("This is it.");
+    const teamName = document.createTextNode("This is the text.");
     newElement.appendChild(teamName);
     document.getElementById("teams").appendChild(newElement);
+}
+
+export function displayTables() { }
+
+
+export function displayLiveMatches() {
+    fetch(`https://v3.football.api-sports.io/fixtures?live=all`, {
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "v3.football.api-sports.io",
+            "x-rapidapi-key": "b61ef01f3458f0f1db19a3d12413f664"
+        }
+    })
+        .then(result => result.json())
+        .then((json) => {
+            console.log(json)
+            // document.getElementById("team").innerHTML = "";
+            // const newTeamDiv = document.createElement("div");
+            // newTeamDiv.setAttribute("id","team");
+
+            for (let i = 0; i < json.response.length; i++) {
+
+                // Create div for each
+                const newDiv = document.createElement("div");
+                newDiv.classList.add("matches-matches-layout");
+
+                const newHomeDiv = document.createElement("div");
+                const newLogo = document.createElement("img");
+                const logoSource = json.response[i].teams.home.logo;
+                newLogo.src = logoSource;
+
+                const newText = document.createElement("p");
+                const teamName = document.createTextNode(json.response[i].teams.home.name);
+                newText.appendChild(teamName);
+                
+                newHomeDiv.appendChild(newLogo);
+                newHomeDiv.appendChild(newText);
+
+                const newTextDiv = document.createElement("div");
+                newDiv.classList.add("date-time-of-match");
+
+                const dateText = document.createElement("p");
+                const dateResponse = document.createTextNode(json.response[i].fixture.date);
+                dateText.appendChild(dateResponse);
+
+                const newAwayDiv = document.createElement("div");
+                const newAwayLogo = document.createElement("img");
+                const AwayLogoSource = json.response[i].teams.away.logo;
+                newAwayLogo.src = AwayLogoSource;
+
+                const newAwayText = document.createElement("p");
+                const AwayTeamName = document.createTextNode(json.response[i].teams.away.name);
+                newAwayText.appendChild(AwayTeamName);
+                
+                newAwayDiv.appendChild(newAwayLogo);
+                newAwayDiv.appendChild(newAwayText);
+
+                newDiv.appendChild(newHomeDiv);
+                newDiv.appendChild(newTextDiv);
+                newDiv.appendChild(newAwayDiv);
+
+                document.getElementById("matches-matches").appendChild(newDiv);
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
 }
 // {
 //     "get": "teams",

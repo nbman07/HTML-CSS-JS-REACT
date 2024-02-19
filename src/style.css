@@ -3,6 +3,7 @@ body {
     width: auto;
     margin: auto;
 }
+
 /* TITLE */
 
 #title {
@@ -74,42 +75,50 @@ body {
 #news {
     display: flex;
     overflow: auto;
-    margin:10px;
+    margin: 10px;
 }
 
 .news-articles {
     display: flex;
-    margin:10px;
+    margin: 10px;
     background-color: black;
 }
 
-#more-news-button {
+.see-more-button {
     display: inline-block;
     background-color: darkgray;
     color: white;
     padding: 0.6em 1em;
     text-decoration: none;
     text-transform: uppercase;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 /* MATCHES */
 #matches {
     display: flex;
     overflow: auto;
-    margin:10px;
+    margin: 10px;
 }
+
 .matches-layout {
-    padding:20px;
-    margin:20px;
+    padding: 20px;
+    margin: 20px;
     background-color: black;
     display: flex;
 }
-.matches-layout > div > p{
-    color:white;
+
+.matches-layout>div>p {
+    color: white;
 }
 
-.date-of-match, .time-of-match {
+.matches-matches-layout>div>p {
+    color: white;
+}
+
+.date-of-match,
+.time-of-match,
+.date-time-of-match {
     color: white;
 }
 
@@ -123,47 +132,81 @@ body {
 #latest-news-news {
     display: inline-block;
     overflow: auto;
-    margin:10px;
+    margin: 10px;
 }
 
 .latest-news-news-articles {
     display: inline-block;
-    margin:10px;
+    margin: 10px;
     background-color: black;
 }
+
 /*** MATCHES PAGE ***/
 #matches-matches {
     display: inline-block;
     overflow: auto;
-    margin:auto;
+    margin: auto;
 }
+
 .matches-matches-layout {
     display: inline-flex;
-    padding:20px;
-    margin:20px;
+    padding: 20px;
+    margin: 20px;
     background-color: black;
 }
-.matches-matches-layout > div > p, .date-of-match, .time-of-match {
-    color:white;
+
+.matches-matches-layout>div>p,
+.date-of-match,
+.time-of-match {
+    color: white;
 }
 
 
 /*** CLUBS PAGE ***/
-#league-season-selector, #league_options, #season_options {
+#league-season-selector,
+#league_options,
+#season_options {
     margin: 10px;
     padding: 5px;
     display: block;
 }
+
 #team {
     display: flex;
-    margin:auto;
+    margin: auto;
     width: auto;
-    overflow: auto;  
+    overflow: auto;
 }
-#team > div {
+
+#team>div {
     height: 100%;
     width: 100%;
 }
+
 #submit-button {
     margin: 10px;
+}
+
+/*** PLAYERS PAGE ***/
+table {
+    border: 2px solid black;
+    width: 800px;
+    height: 200px;
+    margin: 20px;
+}
+
+th {
+    border-bottom: 1px solid black;
+}
+
+td {
+    text-align: center;
+}
+
+/* #player-table-choice {
+    display: inline;
+} */
+.radio {
+    margin:10px;
+    border:10px;
 }

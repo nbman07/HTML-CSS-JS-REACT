@@ -5,9 +5,20 @@ const Register = () => {
         document.getElementById("title").innerHTML = "Register"
     },[]);
     return (
+        <>
+        <center>
+
         <div>
-            <h1>Display Register</h1>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" />
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" />
+            <input type="submit" value="Submit" />
+
         </div>
+        
+        </center>
+        </>
     );
 };
  
