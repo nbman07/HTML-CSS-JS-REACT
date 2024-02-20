@@ -1,21 +1,3 @@
-// const mysql = require("mysql");
-// const dbConfig = require("db-connection.js");
-
-// // Create a connection to the database
-
-
-// // open the MySQL connection
-// connection.connect(error => {
-//   if (error) throw error;
-//   console.log("Successfully connected to the database.");
-// });
-
-// module.exports = connection
-
-// Set up a MySQL connection 
-
-
-// const db = require('./db-connection.js');
 const mysql = require('mysql2');
 const express = require("express");
 const cors = require("cors");
@@ -28,25 +10,9 @@ const db = mysql.createConnection({
   user: 'root',
   password: 'root',
   database: 'football'
-  // insecureAuth: true
 });
 
-// Connect to the MySQL database 
-// db.connect(); 
-
-// Create an API endpoint to fetch data from the database 
-// app.get('/players/data', (req, res) => { 
-//   const query = 'SELECT * FROM club'; 
-
-//   // Execute the query and send the results back to the ReactJS application 
-//   db.query(query, (error, results) => { 
-//     if (error) throw error; 
-//     res.send(results); 
-//   }); 
-// }); 
-
 app.get('/player/data', function (req, res) {
-  // Connecting to the database.
   db.connect(function (err, connection) {
     db.query('SELECT * FROM player', function (error, results, fields) {
       if (error) throw error;
@@ -54,12 +20,40 @@ app.get('/player/data', function (req, res) {
     });
   });
 });
+
+app.post('/player/create', function (req, res) {
+  
+  const firstName = req.body.first_name;
+  const lastName = req.body.last_name;
+  const countryID = req.body.country_id;
+  const clubID = req.body.club_id;
+  
+  db.connect(function (err, connection) {
+    db.query('INSERT INTO player (first_name,last_name,country_id,club_id) VALUES (?,?,?,?)', [firstName, lastName,1,1], function (error, results, fields) {
+      if (error) throw error;
+      console.log(error)
+      console.log(results)
+    });
+  });
+});
+
+app.delete('/player/delete', function (req, res) {
+  
+  const playerID = req.body.player_id;
+  
+  db.connect(function (err, connection) {
+    db.query('DELETE FROM player WHERE player_id = ?', playerID, function (error, results, fields) {
+      if (error) throw error;
+      console.log(error)
+      console.log(results)
+    });
+  });
+});
+
+
+
+
 // Start the server 
 app.listen(3001, () => {
   console.log('Server running on port 3001');
 });
-
-// app.get("/player", (req, res) => {
-//   res.json({ firstName: "Bruno",
-// lastName: "Fernandes" });
-// });

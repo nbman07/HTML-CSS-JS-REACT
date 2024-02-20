@@ -16,7 +16,7 @@ import Tables from "./tables.js";
 import Login from "./login.js";
 import Register from "./register.js";
 // import components
-import Navigation from '../navigation.js';
+import Navigation from '../components/navigation.js';
 
 export function Header() {
   return <h1 id="title">All Football</h1>

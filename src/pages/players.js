@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import RadioInput from "../components/radio-input";
+import ProcessRadioInput from "../process-radio-input";
 
 const Players = () => {
     useEffect(() => {
@@ -7,7 +9,6 @@ const Players = () => {
     }, []);
 
     const [playerDetails, setPlayerDetails] = useState([]);
-    const [data, setData] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:3001/player/data")
@@ -17,6 +18,11 @@ const Players = () => {
     return (
         <>
             <center>
+
+                <div id="search_bar">
+                    <input type="search" placeholder="Search by name or ID..."></input>
+                    <button>Search</button>
+                </div>
                 <div id="player-details">
                     <table>
                         <tr>
@@ -33,26 +39,10 @@ const Players = () => {
                         ))}
                     </table>
                 </div>
-
-                <div id="player-table-choice">
-                    <div className="radio">
-                        <input type="radio" id="html" name="user-input" value="create" />
-                        <label for="create">Add new player</label>
-                    </div>
-                    <div className="radio">
-
-                        <input type="radio" id="css" name="user-input" value="update" />
-                        <label for="update">Update existing player</label>
-                    </div>
-                    <div className="radio">
-
-                        <input type="radio" id="javascript" name="user-input" value="delete" />
-                        <label for="javascript">Delete player</label>
-                    </div>
-                </div>
-                <div id="search_bar">
-                    <input type="search"></input>
-                    <button>Press</button>
+                <RadioInput />
+                <br/>
+                <ProcessRadioInput />
+                <div id="local-db-interaction">
                 </div>
             </center>
         </>

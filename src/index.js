@@ -18,7 +18,7 @@ import Tables from "./pages/tables";
 import Login from "./pages/login";
 import Register from "./pages/register";
 // import components
-import Navigation from "./navigation";
+import Navigation from "./components/navigation.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
