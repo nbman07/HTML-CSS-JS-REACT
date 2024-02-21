@@ -18,29 +18,34 @@ const Players = () => {
     return (
         <>
             <center>
-
-                <div id="search_bar">
-                    <input type="search" placeholder="Search by name or ID..."></input>
-                    <button>Search</button>
-                </div>
-                <div id="player-details">
-                    <table>
-                        <tr>
-                            <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                        </tr>
-                        {playerDetails.map((item) => (
-                            <tr key={item.player_id}>
-                                <td>{item.player_id}</td>
-                                <td>{item.first_name}</td>
-                                <td>{item.last_name}</td>
+                <div id="players-players">
+                    <div id="search_bar">
+                        <input type="search" placeholder="Search by name or ID..."></input>
+                        <button>Search</button>
+                    </div>
+                    <div id="player-details">
+                        <table>
+                            <tr>
+                                <th>ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Country ID</th>
+                                <th>Club ID</th>
                             </tr>
-                        ))}
-                    </table>
+                            {playerDetails.map((item) => (
+                                <tr key={item.player_id}>
+                                    <td>{item.player_id}</td>
+                                    <td>{item.first_name}</td>
+                                    <td>{item.last_name}</td>
+                                    <td>{item.country_id}</td>
+                                    <td>{item.club_id}</td>
+                                </tr>
+                            ))}
+                        </table>
+                    </div>
                 </div>
                 <RadioInput />
-                <br/>
+                <br />
                 <ProcessRadioInput />
                 <div id="local-db-interaction">
                 </div>

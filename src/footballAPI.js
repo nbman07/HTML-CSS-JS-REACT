@@ -117,7 +117,9 @@ export function displayLiveMatches() {
 
                 const dateText = document.createElement("p");
                 const dateResponse = document.createTextNode(json.response[i].fixture.date);
+                console.log(dateResponse);
                 dateText.appendChild(dateResponse);
+                newTextDiv.appendChild(dateText);
 
                 const newAwayDiv = document.createElement("div");
                 const newAwayLogo = document.createElement("img");

@@ -29,7 +29,7 @@ app.post('/player/create', function (req, res) {
   const clubID = req.body.club_id;
 
   db.connect(function (err, connection) {
-    db.query('INSERT INTO player (first_name,last_name,country_id,club_id) VALUES (?,?,?,?)', [firstName, lastName, 1, 1], function (error, results, fields) {
+    db.query('INSERT INTO player (first_name,last_name,country_id,club_id) VALUES (?,?,?,?)', [firstName, lastName, countryID, clubID], function (error, results, fields) {
       if (error) throw error;
       console.log(error)
       console.log(results)
@@ -42,9 +42,11 @@ app.put('/player/update', function (req, res) {
   const playerID = req.body.player_id;
   const firstName = req.body.first_name;
   const lastName = req.body.last_name;
+  const countryID = req.body.country_id;
+  const clubID = req.body.club_id;
 
   db.connect(function (err, connection) {
-    db.query("UPDATE player SET first_name=?,last_name=?,country_id=1,club_id=1 WHERE player_id = ?", [firstName, lastName, playerID], function (error, results, fields) {
+    db.query("UPDATE player SET first_name=?,last_name=?,country_id=?,club_id=? WHERE player_id = ?", [firstName, lastName, countryID, clubID, playerID], function (error, results, fields) {
       if (error) throw error;
       console.log(error)
       console.log(results)

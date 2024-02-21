@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import ReactDOM from "react-dom";
 import './footballAPI.js'
 import './style.css'
+import App from "./App.js";
+
 
 import {
   BrowserRouter as Router, Routes, Route, BrowserRouter
@@ -22,20 +23,23 @@ import Navigation from "./components/navigation.js";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
-    <center>
-      <h1 id="title">All Football</h1>
-    </center>
-    <Navigation />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route exact path="/latest-news" element={<LatestNews />} />
-      <Route path="/matches" element={<Matches />} />
-      <Route exact path="/players" element={<Players />} />
-      <Route exact path="/clubs" element={<Clubs />} />
-      <Route exact path="/tables" element={<Tables />} />
-      <Route exact path="/login" element={<Login />} />
-      <Route exact path="/register" element={<Register />} />
-    </Routes>
-  </Router>
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+  // <Router>
+  //   <center>
+  //     <h1 id="title">All Football</h1>
+  //   </center>
+  //   <Navigation />
+  //   <Routes>
+  //     <Route exact path="/" element={<Home />} />
+  //     <Route exact path="/latest-news" element={<LatestNews />} />
+  //     <Route exact path="/matches" element={<Matches />} />
+  //     <Route exact path="/players" element={<Players />} />
+  //     <Route exact path="/clubs" element={<Clubs />} />
+  //     <Route exact path="/tables" element={<Tables />} />
+  //     <Route exact path="/login" element={<Login />} />
+  //     <Route exact path="/register" element={<Register />} />
+  //   </Routes>
+  // </Router>
 )

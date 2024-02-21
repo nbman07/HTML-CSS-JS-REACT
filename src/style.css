@@ -123,13 +123,13 @@ body {
 }
 
 /*** LATEST NEWS PAGE ***/
-#latest-news-news a {
+#latest-news-latest-news a {
     text-decoration: none;
     text-transform: uppercase;
     color: white;
 }
 
-#latest-news-news {
+#latest-news-latest-news {
     display: inline-block;
     overflow: auto;
     margin: 10px;
@@ -157,7 +157,7 @@ body {
 
 .matches-matches-layout>div>p,
 .date-of-match,
-.time-of-match {
+.time-of-match, .date-time-of-match {
     color: white;
 }
 

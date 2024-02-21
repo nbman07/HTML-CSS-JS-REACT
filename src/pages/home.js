@@ -1,22 +1,7 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Link } from 'react-router-dom';
-import displayLiveMatches from '../footballAPI.js';
 import '../style.css'
-
-import {
-  BrowserRouter as Router, Routes, Route
-} from "react-router-dom";
-// import pages
-import LatestNews from "./latest-news.js";
-import Matches from "./matches.js";
-import Players from "./players.js";
-import Clubs from "./clubs.js";
-import Tables from "./tables.js";
-import Login from "./login.js";
-import Register from "./register.js";
-// import components
-import Navigation from '../components/navigation.js';
 
 export function Header() {
   return <h1 id="title">All Football</h1>
@@ -26,7 +11,7 @@ function HomeLatestNews() {
     <>
       <center>
         <div id="latest-news">
-          <Link to="/latest-news" className="sub-heading-labels">Latest News</Link>
+          <Link to="/latest-news" id="latest-news-link" className="sub-heading-labels">Latest News</Link>
         </div>
         <div id="news">
           <div className="news-articles">
@@ -66,7 +51,7 @@ function HomeMatches() {
 
   return (
     <>
-      <Link to="/matches" className="sub-heading-labels">Matches</Link>
+      <Link to="/matches" id="matches-link" className="sub-heading-labels">Matches</Link>
       <div id="matches">
         <div className="matches-layout">
           <div>
@@ -148,7 +133,7 @@ function HomePlayers() {
   return (
     <>
       <div id="players">
-        <Link to="/players" className="sub-heading-labels">Players</Link>
+        <Link to="/players" id="players-link" className="sub-heading-labels">Players</Link>
       </div>
     </>
   )
@@ -157,7 +142,7 @@ function HomeClubs() {
   return (
     <>
       <div id="clubs">
-        <Link to="/clubs" className="sub-heading-labels">Clubs</Link>
+        <Link to="/clubs" id="clubs-link" className="sub-heading-labels">Clubs</Link>
       </div>
     </>
   )
@@ -165,11 +150,12 @@ function HomeClubs() {
 
 export default function Home() {
   useEffect(() => {
-    document.getElementById("title").innerHTML = "Home"
+    document.getElementById("title").innerText = "Home"
   }, []);
   return (
     <section>
       <center>
+        {/* <Header /> */}
         <br />
         <HomeLatestNews />
         <HomeMatches />
@@ -179,5 +165,3 @@ export default function Home() {
     </section>
   );
 }
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(Home());

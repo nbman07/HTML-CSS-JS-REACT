@@ -7,7 +7,7 @@ const LatestNews = () => {
     return (
         <>
             <center>
-                <div id="latest-news-news">
+                <div id="latest-news-latest-news">
                     <div className="latest-news-news-articles">
                         <a href="https://www.google.com/search?q=rasmus">
                             <img border="0" src="latest-news-1.jpg" width="500" height="300" />

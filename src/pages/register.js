@@ -8,7 +8,7 @@ const Register = () => {
         <>
         <center>
 
-        <div>
+        <div id="register-register">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" />
             <label for="password">Password</label>
