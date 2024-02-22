@@ -25,22 +25,28 @@ const Players = () => {
                     </div>
                     <div id="player-details">
                         <table>
-                            <tr>
-                                <th>ID</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Country ID</th>
-                                <th>Club ID</th>
-                            </tr>
-                            {playerDetails.map((item) => (
-                                <tr key={item.player_id}>
-                                    <td>{item.player_id}</td>
-                                    <td>{item.first_name}</td>
-                                    <td>{item.last_name}</td>
-                                    <td>{item.country_id}</td>
-                                    <td>{item.club_id}</td>
+                            <thead>
+
+                                <tr>
+                                    <th>ID</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Country ID</th>
+                                    <th>Club ID</th>
                                 </tr>
-                            ))}
+                            </thead>
+                            <tbody>
+
+                                {playerDetails.map((item) => (
+                                    <tr key={item.player_id}>
+                                        <td>{item.player_id}</td>
+                                        <td>{item.first_name}</td>
+                                        <td>{item.last_name}</td>
+                                        <td>{item.country_id}</td>
+                                        <td>{item.club_id}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
                         </table>
                     </div>
                 </div>

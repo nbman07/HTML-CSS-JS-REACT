@@ -2,10 +2,8 @@ import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Link } from 'react-router-dom';
 import '../style.css'
+// import Header from '../components/header';
 
-export function Header() {
-  return <h1 id="title">All Football</h1>
-}
 function HomeLatestNews() {
   return (
     <>
@@ -40,13 +38,12 @@ function HomeLatestNews() {
           </div>
         </div>
 
-        <Link to="/latest-news" className="see-more-button">See more...
+        <Link to="/latest-news" className="see-more-button">MORE LATEST NEWS
         </Link>
       </center>
     </>
   );
 }
-
 function HomeMatches() {
 
   return (
@@ -124,7 +121,7 @@ function HomeMatches() {
           </div>
         </div>
       </div>
-      <Link to="/matches" className="see-more-button">See more...
+      <Link to="/matches" className="see-more-button">MORE MATCHES
       </Link>
     </>
   )
@@ -135,6 +132,8 @@ function HomePlayers() {
       <div id="players">
         <Link to="/players" id="players-link" className="sub-heading-labels">Players</Link>
       </div>
+      <Link to="/players" className="see-more-button">MORE PLAYERS
+        </Link>
     </>
   )
 }
@@ -144,6 +143,8 @@ function HomeClubs() {
       <div id="clubs">
         <Link to="/clubs" id="clubs-link" className="sub-heading-labels">Clubs</Link>
       </div>
+      <Link to="/clubs" className="see-more-button">MORE CLUBS
+        </Link>
     </>
   )
 }
@@ -155,7 +156,6 @@ export default function Home() {
   return (
     <section>
       <center>
-        {/* <Header /> */}
         <br />
         <HomeLatestNews />
         <HomeMatches />

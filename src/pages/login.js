@@ -9,9 +9,9 @@ const Login = () => {
         <center>
 
         <div id="login-login">
-            <label for="username">Username</label>
+            <label htmlFor="username">Username</label>
             <input type="text" id="username" name="username" />
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" />
             <input type="submit" value="Submit" />
 
