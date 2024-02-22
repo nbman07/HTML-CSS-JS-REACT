@@ -63,6 +63,7 @@ test('home page has a heading', () => {
   render(<App />);
   const elements = screen.getAllByRole("heading");
   expect(elements.length).toBeGreaterThanOrEqual(1);
+  expect(elements[0]).toHaveTextContent("All Football");
 });
 test('home page has navigation', () => {
   render(<App />);
@@ -116,6 +117,7 @@ test('latest news page has a heading', () => {
   render([<App />, <LatestNews />]);
   const elements = screen.getAllByRole("heading");
   expect(elements.length).toBeGreaterThanOrEqual(1);
+  expect(elements[0]).toHaveTextContent("Latest News");
 });
 test('latest news has navigation', () => {
   render([<App />, <LatestNews />]);
@@ -144,9 +146,101 @@ test('latest news has images', () => {
 });
 
 /*** MATCHES PAGE ELEMENTS ***/
+
+test('matches page has a heading', () => {
+  render([<App />, <Matches />]);
+  const elements = screen.getAllByRole("heading");
+  expect(elements.length).toBeGreaterThanOrEqual(1);
+  expect(elements[0]).toHaveTextContent("Matches");
+});
+test('matches page has navigation', () => {
+  render([<App />, <Matches />]);
+  const element = screen.getAllByRole("navigation");
+  expect(element.length).toBe(1);
+});
+test('matches page has navigation bar links', () => {
+  render([<App />, <Matches />]);
+  const elements = screen.getAllByRole("listitem");
+  expect(elements.length).toBeGreaterThanOrEqual(7);
+});
+test('matches page has a search bar', () => {
+  render([<App />, <Matches />]);
+  const element = screen.getAllByRole("searchbox");
+  expect(element.length).toBe(1);
+});
+test('matches page has images', () => {
+  render([<App />, <Matches />]);
+  const elements = screen.getAllByRole("img");
+  expect(elements.length).toBeGreaterThanOrEqual(1);
+});
+
 /*** PLAYERS PAGE ELEMENTS ***/
+test('players page has a heading', () => {
+  render([<App />, <Players />]);
+  const elements = screen.getAllByRole("heading");
+  expect(elements.length).toBeGreaterThanOrEqual(1);
+  expect(elements[0]).toHaveTextContent("Players");
+});
+test('players page has navigation', () => {
+  render([<App />, <Players />]);
+  const element = screen.getAllByRole("navigation");
+  expect(element.length).toBe(1);
+});
+test('players page has navigation bar links', () => {
+  render([<App />, <Players />]);
+  const elements = screen.getAllByRole("listitem");
+  expect(elements.length).toBeGreaterThanOrEqual(7);
+});
+test('players page has a search bar', () => {
+  render([<App />, <Players />]);
+  const element = screen.getAllByRole("searchbox");
+  expect(element.length).toBeGreaterThanOrEqual(1);
+});
+test('players page has a table',  () => {
+  render([<App />, <Players />]);
+  const elements = screen.getAllByRole("table");
+  expect(elements.length).toBeGreaterThanOrEqual(1);
+});
+test('players page has radio buttons',  () => {
+  render([<App />, <Players />]);
+  const elements = screen.getAllByRole("radio");
+  expect(elements.length).toBe(3);
+});
+
 /*** CLUBS PAGE ELEMENTS ***/
+test('clubs page has a heading', () => {
+  render([<App />, <Clubs />]);
+  const elements = screen.getAllByRole("heading");
+  expect(elements.length).toBeGreaterThanOrEqual(1);
+  expect(elements[0]).toHaveTextContent("Clubs");
+});
+test('clubs page has navigation', () => {
+  render([<App />, <Clubs />]);
+  const element = screen.getAllByRole("navigation");
+  expect(element.length).toBe(1);
+});
+test('clubs page has navigation bar links', () => {
+  render([<App />, <Clubs />]);
+  const elements = screen.getAllByRole("listitem");
+  expect(elements.length).toBeGreaterThanOrEqual(7);
+});
+test('clubs page has navigation links', () => {
+  render([<App />, <Clubs />]);
+  const elements = screen.getAllByRole("link");
+  expect(elements.length).toBeGreaterThanOrEqual(8);
+});
+test('clubs page has a search bar', () => {
+  render([<App />, <Clubs />]);
+  const element = screen.getAllByRole("searchbox");
+  expect(element.length).toBe(1);
+});
+test('clubs page has images', () => {
+  render([<App />, <Clubs />]);
+  const elements = screen.getAllByRole("img");
+  expect(elements.length).toBeGreaterThanOrEqual(1);
+});
 /*** LOGIN PAGE ELEMENTS ***/
+
 /*** REGISTER PAGE ELEMENTS ***/
 
 // CLICK ON ELEMENTS -> CALL FUNCTIONS

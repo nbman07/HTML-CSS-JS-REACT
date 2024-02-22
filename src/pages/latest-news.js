@@ -33,12 +33,6 @@ const LatestNews = () => {
                         </a>
                     </div>
                 </div>
-
-                {/* <nav>
-  
-          <Link to="/latest-news" id="more-news-button">See more...
-          </Link> 
-          </nav> */}
             </center>
         </>
     );

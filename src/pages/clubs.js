@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React, { useEffect } from "react";
 import displayTeams from "../footballAPI";
 
@@ -20,7 +19,6 @@ const Clubs = () => {
         <div id="clubs-clubs">
             <center>
                 <form id="league-season-selector">
-                    {/* <label >League</label> */}
                     <p>League</p>
                     <select name="league" id="league_options">
                         <option value="39">Premier League</option>
@@ -29,7 +27,6 @@ const Clubs = () => {
                         <option value="78">Bundesliga</option>
                         <option value="140">La Liga</option>
                     </select>
-                    {/* <label>Season</label> */}
                     <p>Season</p>
                     <select name="season" id="season_options">
                         <option value="2023">2023-24</option>
@@ -38,8 +35,6 @@ const Clubs = () => {
                     </select>
                 </form>
                 <button id="submit-button" onClick={(e) => {ClearClubs(document.getElementById("league_options").value, document.getElementById("season_options").value)}}>Display teams</button>
-                {/* <button onClick={DisplayTeams(document.getElementById("league_options").value, document.getElementById("season_options").value)}>Click here</button> */}
-                {/* <button onClick={DisplayTeams}>Click here</button> */}
                 <div id="team">
                 </div>
             </center>

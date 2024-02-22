@@ -25,34 +25,21 @@ export default function displayTeams(league, season) {
             "x-rapidapi-key": "b61ef01f3458f0f1db19a3d12413f664"
         }
     })
-        // fetch("https://v3.football.api-sports.io/teams?league=39&season=2023", {
-        //     "method": "GET",
-        //     "headers": {
-        //         "x-rapidapi-host": "v3.football.api-sports.io",
-        //         "x-rapidapi-key": "b61ef01f3458f0f1db19a3d12413f664"
-        //     }
-        // })
         .then(result => result.json())
         .then((json) => {
             console.log(json)
-            // const mapOfTeams = new Map();
             document.getElementById("team").innerHTML = "";
-            // const newTeamDiv = document.createElement("div");
-            // newTeamDiv.setAttribute("id","team");
             <br />
 
             for (let i = 0; i < json.response.length; i++) {
-                // Create element for each team (logo + name)
-                // document.getElementById("team").innerHTML = "";
 
-                // Create div for each
                 const newDiv = document.createElement("div");
                 newDiv.classList.add("team_display");
-                // Create img (logo) and add as child to div
+
                 const newLogo = document.createElement("img");
                 const logoSource = json.response[i].team.logo;
                 newLogo.src = logoSource;
-                // Create name text for each and add as child to div
+
                 const newText = document.createElement("p");
                 const teamName = document.createTextNode(json.response[i].team.name);
                 newText.appendChild(teamName);
@@ -61,7 +48,6 @@ export default function displayTeams(league, season) {
                 newDiv.appendChild(newText);
 
                 document.getElementById("team").appendChild(newDiv);
-                // mapOfTeams.set(teamName,logoSource);
             }
         })
         .catch(err => {
@@ -90,13 +76,9 @@ export function displayLiveMatches() {
         .then(result => result.json())
         .then((json) => {
             console.log(json)
-            // document.getElementById("team").innerHTML = "";
-            // const newTeamDiv = document.createElement("div");
-            // newTeamDiv.setAttribute("id","team");
 
             for (let i = 0; i < json.response.length; i++) {
 
-                // Create div for each
                 const newDiv = document.createElement("div");
                 newDiv.classList.add("matches-matches-layout");
 

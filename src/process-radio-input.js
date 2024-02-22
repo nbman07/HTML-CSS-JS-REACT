@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 const ProcessRadioInput = () => {
     const radioButtons = document.querySelectorAll('input[name="crud-user-input"]');
     for (const radioButton of radioButtons) {
