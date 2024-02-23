@@ -29,9 +29,8 @@ export default function displayTeams(league, season) {
         .then((json) => {
             console.log(json)
             document.getElementById("team").innerHTML = "";
-            <br />
 
-            for (let i = 0; i < json.response.length; i++) {
+            for (let i = 0; i < json.response.length/2; i++) {
 
                 const newDiv = document.createElement("div");
                 newDiv.classList.add("team_display");
@@ -65,8 +64,8 @@ function newFunction() {
 export function displayTables() { }
 
 
-export function displayLiveMatches() {
-    fetch(`https://v3.football.api-sports.io/fixtures?live=all`, {
+export function displayFixtures(league,season) {
+    fetch(`https://v3.football.api-sports.io/fixtures?league=39&season=2023&next=10`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "v3.football.api-sports.io",
@@ -77,14 +76,14 @@ export function displayLiveMatches() {
         .then((json) => {
             console.log(json)
 
-            for (let i = 0; i < json.response.length; i++) {
-
+            for (let i = 0; i < json.response.length ; i++) {
                 const newDiv = document.createElement("div");
                 newDiv.classList.add("matches-matches-layout");
 
                 const newHomeDiv = document.createElement("div");
                 const newLogo = document.createElement("img");
                 const logoSource = json.response[i].teams.home.logo;
+
                 newLogo.src = logoSource;
 
                 const newText = document.createElement("p");
@@ -99,7 +98,7 @@ export function displayLiveMatches() {
 
                 const dateText = document.createElement("p");
                 const dateResponse = document.createTextNode(json.response[i].fixture.date);
-                console.log(dateResponse);
+
                 dateText.appendChild(dateResponse);
                 newTextDiv.appendChild(dateText);
 

@@ -72,12 +72,12 @@ function displayRespectiveUI(e) {
 
         } else if (this.value == "delete") {
             const deletePlayerIDInput = document.createElement("input");
-            deletePlayerIDInput.id = "delete-input";
+            deletePlayerIDInput.id = "delete-player-id";
             deletePlayerIDInput.setAttribute("placeholder", "Player ID");
             display.appendChild(deletePlayerIDInput);
 
             const deletePlayerButton = document.createElement("button");
-            deletePlayerButton.id = "delete-button";
+            deletePlayerButton.id = "delete-submit-button";
             deletePlayerButton.innerText = "Delete";
             display.appendChild(deletePlayerButton);
             deletePlayerButton.addEventListener("click", () => DeletePlayer());
@@ -94,14 +94,21 @@ const CreatePlayer = () => {
     const countryIDInput = document.getElementById("create-country-id");
     const clubIDInput = document.getElementById("create-club-id");
 
-    const data = {
-        "first_name": firstNameInput.value, "last_name": lastNameInput.value,
-        "country_id": countryIDInput.value, "club_id": clubIDInput.value
-    };
+    if (firstNameInput.value == "" || lastNameInput.value == "" || countryIDInput.value == "" || clubIDInput.value == "") {
+        console.log("Empty value");
+        document.getElementById("error-warning-text").innerText = "Please enter values in all fields.";
+    } else if (countryIDInput.value != parseInt(countryIDInput.value, 10) || clubIDInput.value != parseInt(clubIDInput.value, 10)) {
+        console.log("Not a number");
+        document.getElementById("error-warning-text").innerText = "Please enter numbers in the Country ID and Club ID fields.";
+    } else {
+        const data = {
+            "first_name": firstNameInput.value, "last_name": lastNameInput.value,
+            "country_id": countryIDInput.value, "club_id": clubIDInput.value
+        };
 
-    postJSON(data);
-
-    window.location.reload();
+        postJSON(data);
+        window.location.reload();
+    }
 
 }
 async function postJSON(data) {
@@ -126,13 +133,22 @@ const UpdatePlayer = () => {
     const countryIDInput = document.getElementById("update-country-id");
     const clubIDInput = document.getElementById("update-club-id");
 
-    const data = { "player_id": playerIDInput.value, "first_name": firstNameInput.value, "last_name": lastNameInput.value,
-    "country_id": countryIDInput.value, "club_id": clubIDInput.value };
+    if (playerIDInput.value == "" || firstNameInput.value == "" || lastNameInput.value == "" || countryIDInput.value == "" || clubIDInput.value == "") {
+        console.log("Empty value");
+        document.getElementById("error-warning-text").innerText = "Please enter values in all fields.";
+    } else if (playerIDInput != parseInt(playerIDInput, 10) || countryIDInput.value != parseInt(countryIDInput.value, 10) || clubIDInput.value != parseInt(clubIDInput.value, 10)) {
+        console.log("Not a number");
+        document.getElementById("error-warning-text").innerText = "Please enter numbers in the Country ID and Club ID fields.";
+    } else {
+        const data = {
+            "player_id": playerIDInput.value, "first_name": firstNameInput.value, "last_name": lastNameInput.value,
+            "country_id": countryIDInput.value, "club_id": clubIDInput.value
+        };
 
-    putJSON(data);
+        putJSON(data);
 
-    window.location.reload();
-
+        window.location.reload();
+    }
 
 }
 async function putJSON(data) {
@@ -150,13 +166,21 @@ async function putJSON(data) {
 }
 /*** DELETE PLAYER ***/
 const DeletePlayer = () => {
-    const playerID = document.getElementById("delete-input");
+    const playerID = document.getElementById("delete-player-id");
 
-    const data = { "player_id": playerID.value };
+    if (playerID.value == "") {
+        console.log("Empty value");
+        document.getElementById("error-warning-text").innerText = "Please enter values in all fields.";
+    } else if (playerID.value != parseInt(playerID.value, 10)) {
+        console.log("Not a number");
+        document.getElementById("error-warning-text").innerText = "Please enter a number into the Player ID field.";
+    } else {
+        const data = { "player_id": playerID.value };
 
-    deleteJSON(data);
+        deleteJSON(data);
 
-    window.location.reload();
+        window.location.reload();
+    }
 
 }
 async function deleteJSON(data) {

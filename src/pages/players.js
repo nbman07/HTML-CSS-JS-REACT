@@ -55,6 +55,9 @@ const Players = () => {
                 <ProcessRadioInput />
                 <div id="local-db-interaction">
                 </div>
+                <div id="error-warning">
+                    <p id="error-warning-text"></p>
+                </div>
             </center>
         </>
     );

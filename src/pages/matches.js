@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { Link } from 'react-router-dom';
-import { displayLiveMatches } from "../footballAPI";
+import { displayFixtures } from "../footballAPI";
 
 const Matches = () => {
     useEffect(() => {
         document.getElementById("title").innerHTML = "Matches"
     }, []);
-    useEffect(()=> {
-        displayLiveMatches();
-      },[])
+    useEffect(() => {
+        displayFixtures();
+    }, [])
     return (
         <>
             <center>

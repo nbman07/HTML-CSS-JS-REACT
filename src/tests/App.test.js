@@ -339,36 +339,9 @@ describe("Register page has correct elements rendered", () => {
   });
 });
 
-test("Testing", () => {
-  <MemoryRouter>
-    render(<Home/>);
-  </MemoryRouter>
-  userEvent.click(screen.getByText("e"),{exact:false});
-  expect(window.location.href).toBe('http://localhost:3000/')
-})
-
 
 // CLICK ON ELEMENTS -> CALL FUNCTIONS
 
 // fireEvent.click(latestNewsLink);
 //navigation,list,listitem,link,searchbox,img,
 
-// const { getByText } = render(<MyComponent message="Hello, World!" />);
-// const messageElement = getByText(/Hello, World!/i);
-// expect(messageElement).toBeInTheDocument();
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
-
-// test('loads and displays home screen', async () => {
-//   render(<Fetch url="/" />)
-
-//   await userEvent.click(screen.getByText('Load Greeting'))
-//   await screen.findByRole('heading')
-
-//   // ASSERT
-//   expect(screen.getByRole('heading')).toHaveTextContent('hello there')
-//   expect(screen.getByRole('button')).toBeDisabled()
-// })
