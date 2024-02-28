@@ -1,22 +1,15 @@
 import React from 'react';
-import { render, screen, fireEvent, cleanup } from '@testing-library/react';
-import userEvent from '@testing-library/user-event'
+import { render, screen, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom'
 
-import Home from "../pages/home.js";
 import LatestNews from "../pages/latest-news.js";
 import Matches from "../pages/matches.js";
 import Players from "../pages/players.js";
 import Clubs from "../pages/clubs.js";
 import Login from "../pages/login.js";
 import Register from "../pages/register.js";
-// import components
-import Navigation from "../components/navigation.js";
-import RadioInput from '../components/radio-input.js';
-import ProcessRadioInput from '../process-radio-input.js';
 
 import App from "../App.js";
-import { BrowserRouter, MemoryRouter } from 'react-router-dom';
 
 afterEach(() => {
   cleanup();
@@ -338,10 +331,3 @@ describe("Register page has correct elements rendered", () => {
     expect(element).toBeInTheDocument;
   });
 });
-
-
-// CLICK ON ELEMENTS -> CALL FUNCTIONS
-
-// fireEvent.click(latestNewsLink);
-//navigation,list,listitem,link,searchbox,img,
-

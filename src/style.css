@@ -2,6 +2,7 @@
 body {
     width: auto;
     margin: auto;
+    font-family: sans-serif;
 }
 
 /* TITLE */
@@ -12,18 +13,11 @@ body {
     text-align: center;
 }
 
-#search_bar {
-    float: center;
-    padding: 6px;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-}
-
 /* MEMBER BUTTONS */
 .member_buttons {
     float: right;
     text-decoration: none;
+    border-left: 1px solid #bbb;
 }
 
 /* NAVIGATION */
@@ -58,27 +52,31 @@ body {
     background-color: #111;
 }
 
-/* NEWS */
 
-.sub-heading-labels {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 35px;
-}
-
-#news a {
+#actors a, #films a,#categories a {
     text-decoration: none;
     text-transform: uppercase;
     color: white;
 }
 
-#news {
+#actors,#films,#categories {
     display: flex;
     overflow: auto;
     margin: 10px;
+    background-color: gray;
+    padding: 20px;
 }
 
-.news-articles {
+#create-actor-page {
+    display: inline-block;
+    margin:10px;
+}
+
+.create-actor-inputs {
+    margin: 25px;
+}
+
+.home-profile {
     display: flex;
     margin: 10px;
     background-color: black;
@@ -94,103 +92,23 @@ body {
     margin-bottom: 20px;
 }
 
-/* MATCHES */
-#matches {
-    display: flex;
-    overflow: auto;
-    margin: 10px;
-}
-
-.matches-layout {
-    padding: 20px;
-    margin: 20px;
-    background-color: black;
-    display: flex;
-}
-
-.matches-layout>div>p {
-    color: white;
-}
-
-.matches-matches-layout>div>p {
-    color: white;
-}
-
-.date-of-match,
-.time-of-match,
-.date-time-of-match {
-    color: white;
-}
-
-/*** LATEST NEWS PAGE ***/
-#latest-news-latest-news a {
+.create-button {
     text-decoration: none;
-    text-transform: uppercase;
-    color: white;
+    color:black;
 }
 
-#latest-news-latest-news {
-    display: inline-block;
-    overflow: auto;
-    margin: 10px;
-}
-
-.latest-news-news-articles {
-    display: inline-block;
-    margin: 10px;
-    background-color: black;
-}
-
-/*** MATCHES PAGE ***/
-#matches-matches {
-    display: inline-block;
-    overflow: auto;
-    margin: auto;
-}
-
-.matches-matches-layout {
-    display: inline-flex;
-    padding: 20px;
-    margin: 20px;
-    background-color: black;
-}
-
-.matches-matches-layout>div>p,
-.date-of-match,
-.time-of-match, .date-time-of-match {
-    color: white;
-}
-
-
-/*** CLUBS PAGE ***/
-#league-season-selector,
-#league_options,
-#season_options {
-    margin: 10px;
-    padding: 5px;
-    display: block;
-}
-
-#team {
-    display: flex;
-    margin: auto;
-    width: auto;
-    overflow: auto;
-}
-
-#team>div {
-    height: 100%;
-    width: 100%;
+#actor-crud-buttons button {
+    text-decoration: none;
+    color:black;
 }
 
 #submit-button {
     margin: 10px;
 }
 
-/*** PLAYERS PAGE ***/
 table {
     border: 2px solid black;
-    width: 800px;
+    width: 700px;
     height: 200px;
     margin: 20px;
 }
@@ -201,12 +119,48 @@ th {
 
 td {
     text-align: center;
+    color: white;
+    padding: 5px;
+    text-decoration: none;
 }
 
-/* #player-table-choice {
-    display: inline;
-} */
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+.sub-heading-labels {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 35px;
+}
+
 .radio {
     margin:10px;
     border:10px;
+}
+
+div button {
+    margin:5px;
+}
+
+div label {
+    margin:10px;
+}
+div input {
+    margin:10px;
+}
+
+#edit-actor-input-fields {
+    display:block;
+}
+
+#entity-list-search-bar {
+    width: 600px;
+    height: 30px;
+    text-align: center;
 }
