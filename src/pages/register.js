@@ -6,7 +6,7 @@ const Register = () => {
     }, []);
     return (
         <center>
-            <div id="register-register">
+            <div id="register-page">
                 <label htmlFor="username">Username</label>
                 <input type="text" id="username" name="username" />
                 <label htmlFor="password">Password</label>

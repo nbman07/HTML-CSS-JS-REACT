@@ -88,9 +88,9 @@ const EditActor = () => {
                         <input type="text" id="update-actor-last-name" placeholder="Last Name" onChange={(evt) => setActorLastName(evt.target.value)} />
                     </div>
                 </div>
-                <div id="edit-actor-buttons">
+                <div>
                     <br />
-                    <button onClick={() => UpdateActor(id)}>Update</button>
+                    <button id="update-actor-button" onClick={() => UpdateActor(id)}>Update</button>
                     <button><Link to={`/actor/${id}`}>Cancel</Link></button>
                 </div>
                 <div id="edit-actor-warning-text">

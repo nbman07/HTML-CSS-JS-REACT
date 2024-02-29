@@ -2,19 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import SearchBar from "../components/SearchBar";
 
-
 const Films = () => {
-    useEffect(() => {
-        document.getElementById("title").innerHTML = "Films"
-        readAllFilms();
-    }, []);
-    // Get all actors -> 
-    // Sort by X Y Z?
-    // Search by name
-    // Link to Actor page? -> with all films + category
-    // CRUD 
+
     const [filmDetails, setFilmDetails] = useState([]);
-    const [allActors, setActors] = useState([]);
 
     async function readAllFilms() {
         const apiURL = "http://13.51.175.213:8080/home/allFilms";
@@ -63,17 +53,22 @@ const Films = () => {
             });
     }
 
+    useEffect(() => {
+        document.getElementById("title").innerHTML = "Films"
+        readAllFilms();
+    }, []);
+
     return (
         <>
             <center>
-                <div id="actors-page">
+                <div id="films-page">
                     <br />
-                    <div id="actors-search-bar">
+                    <div id="films-search-bar">
                         <SearchBar onSearch={searchFilms} />
                     </div>
                     <br />
                     <button><Link to="/film/create">Add new Film</Link></button>
-                    <div id="actor-details-table">
+                    <div id="films-details-table">
                         <table>
                             <thead>
                                 <tr>

@@ -14,7 +14,7 @@ const Home = () => {
   const [filmDetails, setFilmDetails] = useState(null);
   const [categoryDetails, setCategoryDetails] = useState(null);
 
-  if (actorDetails === null || filmDetails === null) {
+  if (actorDetails === null || filmDetails === null || categoryDetails === null) {
     return (
       <div>
         <p>Loading...</p>
@@ -23,12 +23,14 @@ const Home = () => {
   }
   return (
     <section>
-      <center>
-        <br />
-        <HomeActors />
-        <HomeFilms />
-        <HomeCategories />
-      </center>
+      <div id="home-page">
+        <center>
+          <br />
+          <HomeActors />
+          <HomeFilms />
+          <HomeCategories />
+        </center>
+      </div>
     </section>
   );
 
@@ -93,7 +95,7 @@ const Home = () => {
     return (
       <center>
         <div>
-          <Link to="/actors" className="sub-heading-labels">Featured Actors</Link>
+          <Link to="/actors" id="actors-link" className="sub-heading-labels">Featured Actors</Link>
         </div>
         <div id="actors">
           <div className="home-profile">
@@ -149,7 +151,7 @@ const Home = () => {
 
     return (
       <>
-        <Link to="/films" id="matches-link" className="sub-heading-labels">Featured Films</Link>
+        <Link to="/films" id="films-link" className="sub-heading-labels">Featured Films</Link>
         <div id="films">
           <div className="home-profile">
             <a href="/film/1">
@@ -197,7 +199,7 @@ const Home = () => {
     return (
       <>
         <div>
-          <Link to="/categories" id="players-link" className="sub-heading-labels">Categories</Link>
+          <Link to="/categories" id="categories-link" className="sub-heading-labels">Categories</Link>
         </div>
 
         <div id="categories">

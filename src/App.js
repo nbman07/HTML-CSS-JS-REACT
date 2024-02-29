@@ -30,10 +30,9 @@ import Navigation from "./components/navigation";
 
 export default function App() {
     return (
-
         <Router>
             <center>
-                <h1 id="title"></h1>
+                <h1 id="title">Films DB</h1>
             </center>
             <Navigation />
             <Routes>

@@ -91,7 +91,7 @@ const ActorPage = () => {
                 <br />
                 <button id="back-to-films-button"><Link to={`/actors`}>Back to Actors</Link></button>
                 <button id="edit-actor-button"><Link to={`/actor/${actorDetails.actorID}/update`}>Edit Actor</Link></button>
-                <button id="delete-actor-button" onClick={() => DeleteActor(id)}>Delete Actor</button>
+                <button id="delete-actor-button" onClick={() => DeleteActor()}>Delete Actor</button>
             </div>
             <div id="actor-name">
                 <h1>{actorDetails.firstName} {actorDetails.lastName}</h1>

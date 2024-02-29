@@ -138,7 +138,7 @@ const EditFilm = () => {
                 <button onClick={() => AddCategory()}>Add Category</button>
                 <div id="edit-film-buttons">
                     <br />
-                    <button onClick={() => UpdateFilm(id)}>Update</button>
+                    <button id="update-film-button" onClick={() => UpdateFilm(id)}>Update</button>
                     <button><Link to={`/film/${id}`}>Cancel</Link></button>
                 </div>
                 <div id="edit-film-warning-text">

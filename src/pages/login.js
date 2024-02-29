@@ -6,7 +6,7 @@ const Login = () => {
     }, []);
     return (
         <center>
-            <div id="login-login">
+            <div id="login-page">
                 <label htmlFor="username">Username</label>
                 <input type="text" id="username" name="username" />
                 <label htmlFor="password">Password</label>

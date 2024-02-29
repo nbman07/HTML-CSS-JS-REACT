@@ -10,7 +10,6 @@ function Navigation() {
                 <li id="films-nav-bar"><Link to="/films">Films</Link></li>
                 <li id="categories-nav-bar"><Link to="/categories">Categories</Link></li>
                 <div className="member_buttons">
-                    {/* <li id="search-nav-bar"><input type="search" id="search_bar" placeholder="Search..." /></li> */}
                     <li id="login-nav-bar"><Link to="/login">Login</Link></li>
                     <li id="register-nav-bar"><Link to="/register">Register</Link></li>
                 </div>

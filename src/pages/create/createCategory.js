@@ -43,7 +43,7 @@ const CreateCategory = () => {
                 <input type="text" id="create-category-name" placeholder="Category Name" onChange={(evt) => setCategoryName(evt.target.value)} />
             </div>
             <div>
-                <button onClick={() => CreateNewCategory()}>Create</button>
+                <button id="create-category-button" onClick={() => CreateNewCategory()}>Create</button>
                 <button><Link to="/categories">Cancel</Link></button>
             </div>
             <div id="create-category-error-warning">

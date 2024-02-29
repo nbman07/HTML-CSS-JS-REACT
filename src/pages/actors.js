@@ -73,7 +73,6 @@ const Actors = () => {
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    {/* <th>Last Name</th> */}
                                 </tr>
                             </thead>
                             <tbody>
@@ -81,7 +80,6 @@ const Actors = () => {
                                     <tr key={item.actorID}>
                                         <td><Link to={`/actor/${item.actorID}`}>{item.actorID}</Link></td>
                                         <td><Link to={`/actor/${item.actorID}`}>{item.firstName} {item.lastName}</Link></td>
-                                        {/* <td><Link to={`/actor/${item.actorID}`}>{item.lastName}</Link></td> */}
                                     </tr>
                                 ))}
                             </tbody>

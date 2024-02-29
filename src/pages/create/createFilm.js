@@ -52,28 +52,27 @@ const CreateFilm = () => {
             <div>
                 <div>
                     <label>Title</label>
-                    <input type="text" id="update-film-title" placeholder="Title" onChange={(evt) => setFilmTitle(evt.target.value)} />
+                    <input type="text" id="create-film-title" placeholder="Title" onChange={(evt) => setFilmTitle(evt.target.value)} />
                 </div>
                 <div>
                     <label>Description</label>
-                    <input type="text" id="update-film-description" placeholder="Description" onChange={(evt) => setFilmDescription(evt.target.value)} />
+                    <input type="text" id="create-film-description" placeholder="Description" onChange={(evt) => setFilmDescription(evt.target.value)} />
                 </div>
                 <div>
-
                     <label>Language ID</label>
-                    <input type="text" id="update-film-language-id" placeholder="Language ID" onChange={(evt) => setFilmLanguageID(evt.target.value)} />
+                    <input type="text" id="create-film-language-id" placeholder="Language ID" onChange={(evt) => setFilmLanguageID(evt.target.value)} />
                 </div>
                 <div>
                     <label>Length</label>
-                    <input type="text" id="update-film-length" placeholder="Length" onChange={(evt) => setFilmLength(evt.target.value)} />
+                    <input type="text" id="create-film-length" placeholder="Length" onChange={(evt) => setFilmLength(evt.target.value)} />
                 </div>
                 <div>
                     <label>Rating</label>
-                    <input type="text" id="update-film-rating" placeholder="Rating" onChange={(evt) => setFilmRating(evt.target.value)} />
+                    <input type="text" id="create-film-rating" placeholder="Rating" onChange={(evt) => setFilmRating(evt.target.value)} />
                 </div>
             </div>
             <div>
-                <button onClick={() => CreateNewFilm()}>Create</button>
+                <button id="create-film-button" onClick={() => CreateNewFilm()}>Create</button>
                 <button><Link to="/films">Cancel</Link></button>
             </div>
             <div id="create-film-error-warning">

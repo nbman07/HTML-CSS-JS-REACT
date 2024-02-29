@@ -35,7 +35,7 @@ const CategoryRadioInput = () => {
                 display.appendChild(updateCategoryNameInput);
 
                 const updateCategoryButton = document.createElement("button");
-                updateCategoryButton.id = "update-submit-button";
+                updateCategoryButton.id = "update-category-button";
                 updateCategoryButton.innerText = "Update";
                 display.appendChild(updateCategoryButton);
                 updateCategoryButton.addEventListener("click", () => UpdateCategory());
@@ -47,7 +47,7 @@ const CategoryRadioInput = () => {
                 display.appendChild(deleteCategoryIDInput);
 
                 const deleteCategoryButton = document.createElement("button");
-                deleteCategoryButton.id = "delete-submit-button";
+                deleteCategoryButton.id = "delete-category-button";
                 deleteCategoryButton.innerText = "Delete";
                 display.appendChild(deleteCategoryButton);
                 deleteCategoryButton.addEventListener("click", () => DeleteCategory());
