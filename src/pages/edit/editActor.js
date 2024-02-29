@@ -58,7 +58,7 @@ const EditActor = () => {
     }
     async function postJSON(data, id) {
         try {
-            const response = await fetch(`http://13.51.175.213:8080/home/update/actor/${id}`, {
+            await fetch(`http://13.51.175.213:8080/home/update/actor/${id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
@@ -70,7 +70,6 @@ const EditActor = () => {
     }
 
     return (
-        <>
             <center>
                 <div id="film-details">
                     <p>ID: {actorDetails.actorID}</p>
@@ -79,13 +78,14 @@ const EditActor = () => {
                 </div>
                 <div id="edit-actor-input-fields">
                     <div>
-                        <label>First Name</label>
-                        <input type="text" id="update-actor-first-name" placeholder="First Name" onChange={(evt) => setActorFirstName(evt.target.value)} />
+                        <label>First Name
+                            <input type="text" id="update-actor-first-name" placeholder="First Name" onChange={(evt) => setActorFirstName(evt.target.value)} />
+                        </label>
                     </div>
                     <div>
-
-                        <label>Last Name</label>
-                        <input type="text" id="update-actor-last-name" placeholder="Last Name" onChange={(evt) => setActorLastName(evt.target.value)} />
+                        <label>Last Name
+                            <input type="text" id="update-actor-last-name" placeholder="Last Name" onChange={(evt) => setActorLastName(evt.target.value)} />
+                        </label>
                     </div>
                 </div>
                 <div>
@@ -97,7 +97,6 @@ const EditActor = () => {
 
                 </div>
             </center>
-        </>
     );
 }
 

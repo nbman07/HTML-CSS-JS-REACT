@@ -58,7 +58,6 @@ const Actors = () => {
     }
 
     return (
-        <>
             <center>
                 <div id="actors-page">
                     <br />
@@ -87,7 +86,6 @@ const Actors = () => {
                     </div>
                 </div>
             </center>
-        </>
     );
 };
 

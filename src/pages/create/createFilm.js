@@ -36,7 +36,7 @@ const CreateFilm = () => {
         }
         async function postJSON(data) {
             try {
-                const response = await fetch("http://13.51.175.213:8080/home/add/film", {
+                await fetch("http://13.51.175.213:8080/home/add/film", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(data),
@@ -51,24 +51,29 @@ const CreateFilm = () => {
         <center>
             <div>
                 <div>
-                    <label>Title</label>
-                    <input type="text" id="create-film-title" placeholder="Title" onChange={(evt) => setFilmTitle(evt.target.value)} />
+                    <label>Title
+                        <input type="text" id="create-film-title" placeholder="Title" onChange={(evt) => setFilmTitle(evt.target.value)} />
+                    </label>
                 </div>
                 <div>
-                    <label>Description</label>
-                    <input type="text" id="create-film-description" placeholder="Description" onChange={(evt) => setFilmDescription(evt.target.value)} />
+                    <label>Description
+                        <input type="text" id="create-film-description" placeholder="Description" onChange={(evt) => setFilmDescription(evt.target.value)} />
+                    </label>
                 </div>
                 <div>
-                    <label>Language ID</label>
-                    <input type="text" id="create-film-language-id" placeholder="Language ID" onChange={(evt) => setFilmLanguageID(evt.target.value)} />
+                    <label>Language ID
+                        <input type="text" id="create-film-language-id" placeholder="Language ID" onChange={(evt) => setFilmLanguageID(evt.target.value)} />
+                    </label>
                 </div>
                 <div>
-                    <label>Length</label>
-                    <input type="text" id="create-film-length" placeholder="Length" onChange={(evt) => setFilmLength(evt.target.value)} />
+                    <label>Length
+                        <input type="text" id="create-film-length" placeholder="Length" onChange={(evt) => setFilmLength(evt.target.value)} />
+                    </label>
                 </div>
                 <div>
-                    <label>Rating</label>
-                    <input type="text" id="create-film-rating" placeholder="Rating" onChange={(evt) => setFilmRating(evt.target.value)} />
+                    <label>Rating
+                        <input type="text" id="create-film-rating" placeholder="Rating" onChange={(evt) => setFilmRating(evt.target.value)} />
+                    </label>
                 </div>
             </div>
             <div>

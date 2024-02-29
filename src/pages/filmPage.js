@@ -13,7 +13,6 @@ const FilmPage = () => {
     }, []);
 
     const [filmDetails, setFilmDetails] = useState(null);
-    const [filmID, setFilmID] = useState(null);
 
     function readFilm(id) {
 
@@ -51,7 +50,6 @@ const FilmPage = () => {
             deleteJSON(data);
 
             navigate("/films");
-            // window.location.reload();
         }
 
         async function deleteJSON(data) {
@@ -69,7 +67,6 @@ const FilmPage = () => {
     }
 
     return (
-        <>
             <center>
                 <div id="film-crud-buttons">
                     <br />
@@ -107,7 +104,6 @@ const FilmPage = () => {
                     </table>
                 </div>
             </center>
-        </>
     );
 };
 

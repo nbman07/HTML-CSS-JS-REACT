@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams, redirect, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 
 
@@ -19,8 +19,8 @@ const EditFilm = () => {
     const [filmLanguageID, setFilmLanguageID] = useState(null);
     const [filmLength, setFilmLength] = useState(null);
     const [filmRating, setFilmRating] = useState(null);
-    const [filmCategories, setFilmCategories] = useState(null);
-    const [filmActors, setFilmActors] = useState(null);
+    const [filmCategories] = useState(null);
+    const [filmActors] = useState(null);
 
     function readFilm(id) {
 
@@ -67,13 +67,11 @@ const EditFilm = () => {
     }
     async function postJSON(data, id) {
         try {
-            const response = await fetch(`http://13.51.175.213:8080/home/update/film/${id}`, {
+            await fetch(`http://13.51.175.213:8080/home/update/film/${id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
             });
-            // const result = await response.json();
-            // console.log("Success:", result);
         } catch (error) {
             console.error("Error is:", error);
         }
@@ -83,7 +81,6 @@ const EditFilm = () => {
     const AddCategory = () => { }
 
     return (
-        <>
             <center>
                 <div id="film-details">
                     <div id="film-details">
@@ -118,20 +115,21 @@ const EditFilm = () => {
                     </div>
                 </div>
                 <div id="edit-film-input-fields">
-                    <label>Title</label>
-                    <input type="text" id="update-film-title" placeholder="Title" onChange={(evt) => setFilmTitle(evt.target.value)} />
-                    <label>Description</label>
-                    <input type="text" id="update-film-description" placeholder="Description" onChange={(evt) => setFilmDescription(evt.target.value)} />
-                    <label>Language ID</label>
-                    <input type="text" id="update-film-language-id" placeholder="Language ID" onChange={(evt) => setFilmLanguageID(evt.target.value)} />
-                    <label>Length</label>
-                    <input type="text" id="update-film-length" placeholder="Length" onChange={(evt) => setFilmLength(evt.target.value)} />
-                    <label>Rating</label>
-                    <input type="text" id="update-film-rating" placeholder="Rating" onChange={(evt) => setFilmRating(evt.target.value)} />
-                    {/* <label>Categories</label>
-                    <input type="text" id="update-film-categories" placeholder="Categories" onChange={(evt) => setFilmCategories(evt.target.value)} />
-                    <label>Actors</label>
-                    <input type="text" id="update-film-actors" placeholder="Actors" onChange={(evt) => setFilmActors(evt.target.value)} /> */}
+                    <label>Title
+                        <input type="text" id="update-film-title" placeholder="Title" onChange={(evt) => setFilmTitle(evt.target.value)} />
+                    </label>
+                    <label>Description
+                        <input type="text" id="update-film-description" placeholder="Description" onChange={(evt) => setFilmDescription(evt.target.value)} />
+                    </label>
+                    <label>Language ID
+                        <input type="text" id="update-film-language-id" placeholder="Language ID" onChange={(evt) => setFilmLanguageID(evt.target.value)} />
+                    </label>
+                    <label>Length
+                        <input type="text" id="update-film-length" placeholder="Length" onChange={(evt) => setFilmLength(evt.target.value)} />
+                    </label>
+                    <label>Rating
+                        <input type="text" id="update-film-rating" placeholder="Rating" onChange={(evt) => setFilmRating(evt.target.value)} />
+                    </label>
                 </div>
                 <br />
                 <button onClick={() => AddActor()}>Add Actor</button>
@@ -145,7 +143,6 @@ const EditFilm = () => {
 
                 </div>
             </center>
-        </>
     );
 }
 

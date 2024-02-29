@@ -73,7 +73,7 @@ const CategoryPage = () => {
 
         async function deleteJSON(data) {
             try {
-                const response = await fetch(`http://13.51.175.213:8080/home/delete/category/${id}`, {
+                await fetch(`http://13.51.175.213:8080/home/delete/category/${id}`, {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(data),

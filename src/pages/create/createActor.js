@@ -28,7 +28,7 @@ const CreateActor = () => {
         }
         async function postJSON(data) {
             try {
-                const response = await fetch("http://13.51.175.213:8080/home/add/actor", {
+                await fetch("http://13.51.175.213:8080/home/add/actor", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(data),
@@ -44,20 +44,14 @@ const CreateActor = () => {
         <center>
             <div id="create-actor-page">
                 <div className="create-actor-inputs">
-                    <div className="create-actor-input-labels">
-                        <label>First Name</label>
-                    </div>
-                    <div>
+                    <label>First Name
                         <input type="text" id="create-actor-first-name" placeholder="First Name" onChange={(evt) => setActorFirstName(evt.target.value)} />
-                    </div>
+                    </label>
                 </div>
-                <div class="create-actor-inputs">
-                    <div className="create-actor-input-labels">
-                        <label>Last Name</label>
-                    </div>
-                    <div>
+                <div className="create-actor-inputs">
+                    <label>Last Name
                         <input type="text" id="create-actor-last-name" placeholder="Last Name" onChange={(evt) => setActorLastName(evt.target.value)} />
-                    </div>
+                    </label>
                 </div>
             </div>
             <div>

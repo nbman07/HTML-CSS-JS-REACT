@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\Users\nim_b\React\sakila-web-app\src\tests\App.test.js">
+    <testCase name="Rendering each page without issues renders the home page" duration="3"/>
+    <testCase name="Rendering each page without issues renders the actors page" duration="2"/>
+    <testCase name="Rendering each page without issues renders the films page" duration="1"/>
+    <testCase name="Rendering each page without issues renders the categories page" duration="1"/>
+    <testCase name="Rendering each page without issues renders the login page" duration="8"/>
+    <testCase name="Rendering each page without issues renders the register page" duration="1"/>
+    <testCase name="Rendering each page without issues renders a single actor page" duration="1"/>
+    <testCase name="Rendering each page without issues renders a single film page" duration="1"/>
+    <testCase name="Rendering each page without issues renders a single category page" duration="0"/>
+    <testCase name="Rendering each page without issues renders the create actor page" duration="1"/>
+    <testCase name="Rendering each page without issues renders the create film page" duration="0"/>
+    <testCase name="Rendering each page without issues renders the create category page" duration="0"/>
+    <testCase name="Rendering each page without issues renders the edit actor page" duration="0"/>
+    <testCase name="Rendering each page without issues renders the edit film page" duration="1"/>
+    <testCase name="Rendering each page without issues renders the edit category page" duration="1"/>
+    <testCase name="Rendering components without issues renders the navigation bar" duration="0"/>
+    <testCase name="Rendering components without issues renders the radio buttons" duration="0"/>
+    <testCase name="Rendering components without issues renders the search bar" duration="0"/>
+  </file>
+</testExecutions>

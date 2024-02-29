@@ -16,7 +16,6 @@ const ActorPage = () => {
 
     const [actorDetails, setActorDetails] = useState([]);
     const [filmDetails, setFilmDetails] = useState([]);
-    const [filmID, setFilmID] = useState([]);
 
     function readActor(id) {
         const apiURL = `http://13.51.175.213:8080/home/actor/${id}`
@@ -73,7 +72,7 @@ const ActorPage = () => {
 
         async function deleteJSON(data) {
             try {
-                const response = await fetch(`http://13.51.175.213:8080/home/delete/actor/${id}`, {
+                await fetch(`http://13.51.175.213:8080/home/delete/actor/${id}`, {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(data),

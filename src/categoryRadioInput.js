@@ -109,7 +109,7 @@ const CategoryRadioInput = () => {
     }
     async function putJSON(data, id) {
         try {
-            const response = await fetch(`http://13.51.175.213:8080/home/update/category/${id}`, {
+            await fetch(`http://13.51.175.213:8080/home/update/category/${id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
@@ -137,7 +137,7 @@ const CategoryRadioInput = () => {
     }
     async function deleteJSON(data) {
         try {
-            const response = await fetch(`http://13.51.175.213:8080/home/delete/category/${data.categoryID}`, {
+            await fetch(`http://13.51.175.213:8080/home/delete/category/${data.categoryID}`, {
                 method: "DELETE",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),

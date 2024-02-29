@@ -58,7 +58,7 @@ const EditCategory = () => {
     }
     async function postJSON(data, id) {
         try {
-            const response = await fetch(`http://13.51.175.213:8080/home/update/category/${id}`, {
+            await fetch(`http://13.51.175.213:8080/home/update/category/${id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
@@ -69,15 +69,15 @@ const EditCategory = () => {
     }
 
     return (
-        <>
             <center>
                 <div id="category-details">
                     <p>ID: {categoryDetails.categoryID}</p>
                     <p>Category Name: {categoryDetails.categoryName}</p>
                 </div>
                 <div id="edit-category-input-fields">
-                    <label>Category Name</label>
-                    <input type="text" id="update-category-name" placeholder="Category Name" onChange={(evt) => setCategoryName(evt.target.value)} />
+                    <label>Category Name
+                        <input type="text" id="update-category-name" placeholder="Category Name" onChange={(evt) => setCategoryName(evt.target.value)} />
+                    </label>
                 </div>
                 <div id="edit-category-buttons">
                     <br />
@@ -88,7 +88,6 @@ const EditCategory = () => {
 
                 </div>
             </center>
-        </>
     );
 }
 
